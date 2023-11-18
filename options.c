@@ -31,7 +31,7 @@ options_t parse_args(int argc, char **argv) {
   opts.suffix = getenv("JOT_SUFFIX");
   opts.root = getenv("JOT_ROOT");
   opts.as_of = time(0);
-  opts.date_format = format_time_iso8601;
+  opts.date_format = format_date;
 
   // parse cmdline
 
