@@ -19,6 +19,11 @@ void usage(int argc, char **argv) {
       "\t\t-d\tuse current date\n"
       "\t\t-t\tuse current time\n"
       "\t\t-i\t(default) use current iso-8601 time\n"
+      "\n"
+      "\tother flags\n"
+      "\n"
+      "\t\t-h\tprint this help\n"
+      "\t\t-v\tprint version\n"
       "",
       argv[0]);
 }

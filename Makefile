@@ -1,11 +1,11 @@
-TARGET := jot
+TARGET ?= jot
 
-GIT_VERSION := "$(shell git describe --abbrev=4 --dirty --always --tags)"
+GIT_VERSION ?= "$(shell git describe --abbrev=4 --dirty --always --tags)"
+INSTALL ?= install -s
+prefix ?= ${HOME}
+bindir ?= $(prefix)/bin
+
 CFLAGS += -DVERSION=\"$(GIT_VERSION)\"
-
-INSTALL := install -s
-prefix := ${HOME}
-bindir := $(prefix)/bin
 
 SRCS := $(wildcard *.c)
 HDRS := $(wildcard *.h)
