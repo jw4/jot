@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdbool.h>
 #include <sys/types.h>
 
 void usage(int argc, char **argv);
@@ -13,6 +14,7 @@ typedef struct {
   char *root;
   time_t as_of;
   date_handler date_format;
+  bool dry_run;
 } options_t;
 
 options_t parse_args(int argc, char **argv);

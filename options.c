@@ -24,6 +24,7 @@ void usage(int argc, char **argv) {
       "\n"
       "\t\t-h\tprint this help\n"
       "\t\t-v\tprint version\n"
+      "\t\t-n\tdry run; just print file path\n"
       "",
       argv[0]);
 }
@@ -37,6 +38,7 @@ options_t parse_args(int argc, char **argv) {
   opts.root = getenv("JOT_ROOT");
   opts.as_of = time(0);
   opts.date_format = format_date;
+  opts.dry_run = false;
 
   // parse cmdline
 
@@ -85,6 +87,9 @@ options_t parse_args(int argc, char **argv) {
         case 'v':
           fprintf(stdout, "version: %s\n", VERSION);
           exit(0);
+        case 'n':
+          opts.dry_run = true;
+          break;
         default:
           fprintf(stderr, "OPTION -%c unknown\n", tok);
           break;
